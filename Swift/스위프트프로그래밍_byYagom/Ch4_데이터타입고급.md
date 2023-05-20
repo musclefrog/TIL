@@ -334,3 +334,79 @@ var dinner: MainDish = MainDish.pasta(taste: "크림")
 dinner = .pizza(dough: "치즈크러스트", topping: "불고기")
 dinner = .rice
 ```
+
+### 4.5.4 항목 순회
+
+`CaseIterable` 프로토콜: 열거형에 포함된 모든 케이스를 알아야 할 때
+
+→ 열거형에 `allCases`라는 이름의 타입 프로퍼티를 통해 모든 케이스의 컬렉션을 생성해줌.
+
+```swift
+enum School: Caselterable { 
+        case primary
+        case elementary 
+        case middle 
+        case high
+        case college 
+        case university 
+        case graduate
+}
+
+let allCases: [School] = School.allCases
+print(allCases)
+// [School.primary, School.elementary, School.middle, School.high, School.college, School.university, School.graduate]
+```
+
+- 원시값을 갖는 열거형이라면 원시값의 타입 다음에 쉼표(,)를 쓰고 띄어쓰기를 한 후 `CaseIterable` 프로토콜을 채택해준다.
+
+### 4.5.4 순환 열거형
+
+열거형 항목의 연관 값이 열거형 자신의 값이고자 할 때 사용.
+
+- `indirect` 키워드를 사용하여 순환 열거형을 명시
+- 열거형 전체에 적용하고 싶다면 enum 키워드 앞에 `indirect` 키워드를 붙인다.
+
+**특정 항목에 순환 열거형 항목 명시**
+
+```swift
+enum ArithmeticExpression { 
+        case number(Int)
+        indirect case addition(ArithmeticExpression, ArithmeticExpression)
+        indirect case multiplication(ArithmeticExpression, ArithmeticExpression) 
+}
+```
+
+**열거형 전체에 순환 열거형 명시**
+
+```swift
+indirect enum ArithmeticExpression { 
+        case number(Int)
+        case addition(ArithmeticExpression, ArithmeticExpression)
+        case multiplication(ArithmeticExpression, ArithmeticExpression) 
+}
+```
+
+**순환 열거형의 사용**
+
+```swift
+let five = ArithmeticExpression.number(S)
+let four = ArithmeticEpxression.number(4)
+let sum= ArithmeticExpression.addition(five, four)
+let final = ArithmeticExpression.multiplication(sum, ArithmeticExpression.number(2))
+
+func evaluate(_ expression: ArithmeticExpression) -> Int { 
+        switch expression {
+        case .number(let value):
+                return value
+        case .addition(let left, let right):
+                return evaluae(left) + evaluate(right) 
+        case .multiplication(let left, let right):
+                return evaluate(left) * evaluate(right) 
+        }
+}
+
+let result: Int = evaluate(final)
+print ("(5 + 4) * 2 = \(result)") // (5 + 4) * 2 = 18
+```
+
+- `indirect` 키워드는 이진 탐색 트리 등의 순환 알고리즘을 구현할 때 유용하게 사용할 수 있다.
