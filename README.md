@@ -2,8 +2,7 @@
 
 Today I Learned
 
-> 바로가기
-> 
+
 
 ## Swift
 
