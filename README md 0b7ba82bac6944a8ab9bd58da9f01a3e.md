@@ -1,8 +1,4 @@
-# TIL
-
-Today I Learned
-
-
+# README.md
 
 ## Swift
 
@@ -12,7 +8,7 @@ Today I Learned
 
 [#데이터타입 #Int #UInt #Bool #Float #Double #Character #String #특수문자 #Any #AnyObject #nil](https://github.com/musclefrog/TIL/blob/main/Swift/스위프트프로그래밍_byYagom/Ch3_데이터타입기본.md)
 
-[#데이터타입안심 #타입추론 #타입별칭 #튜플 #컬렉션형 #배열 #딕셔너리 #세트 #열거형 #enum #원시값 #rawValue #연관값 #항목순회 #순환열거형 #indirect](https://github.com/musclefrog/TIL/blob/main/Swift/스위프트프로그래밍_byYagom/Ch4_데이터타입고급.md)
+[#데이터타입안심 #타입추론 #타입별칭 #typealias #튜플 #컬렉션형 #배열 #딕셔너리 #세트 #열거형 #enum #원시값 #rawValue #연관값 #항목순회 #순환열거형 #indirect](https://github.com/musclefrog/TIL/blob/main/Swift/스위프트프로그래밍_byYagom/Ch4_데이터타입고급.md)
 
 [#할당(대입)연산자 #산술연산자 #비교연산자 #삼항조건연산자 #범위연산자 #부울연산자 #비트연산자 #복합할당연산자 #오버플로연산자 #nil병합연산자 #옵셔널연산자 #연산자우선순위 #결합방향 #사용자정의연산자 #전위연산자정의 #후위연산자정의 #중위연산자정의](https://github.com/musclefrog/TIL/blob/main/Swift/스위프트프로그래밍_byYagom/Ch5_연산자.md)
 
