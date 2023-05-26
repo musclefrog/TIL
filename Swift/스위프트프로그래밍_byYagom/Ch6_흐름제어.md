@@ -379,3 +379,78 @@ for 번호 in 지역번호 {
 ### 6.2.2 while 구문
 
 : 특정 조건(Bool 타입으로 지정되어야 함)이 성립하는 한 블록 내부의 코드를 반복 실행한다.
+
+- for-in 구문과 마찬가지로 continue, break 등의 제어 키워드 사용이 가능하다.
+
+```swift
+var names: [String] = ["Joker", "Jenny", "Nova", "yagom"]
+
+while names.isEmpty == false {
+        print("Good bye \(names.removeFirst())")
+        // removeFirst()는 요소를 삭제함과 동시에 삭제한 요소를 반환한다.
+}
+
+// Good bye Joker
+// Good bye Jenny
+// Good bye Nova
+// Good bye yagom
+```
+
+### 6.2.3 repeat-while 구문
+
+: repeat 블록의 코드를 최초 1회 실행한 후, while 다음의 조건이 성립하면 블록 내부의 코드를 반복 실행한다.
+
+- 다른 프로그래밍 언어의 do-while 구문과 크게 다르지 않다.
+
+```swift
+var names: [String] = ["John", "Jenny", "Joe", "yagom"]
+
+repeat {
+        print("Good bye \(names.removeFirst())")
+} while names.isEmpty == false
+
+// Good bye John
+// Good bye Jenny
+// Good bye Joe
+// Good bye yagom
+```
+
+## 6.3 구문 이름표
+
+- 반복문을 중첩으로 작성하게 될 때 반복문을 제어하는 키워드(break, continue 등)가 어떤 범위에 적용되어야 하는지 애매하거나 큰 범위의 반목문을 종료하고 싶은데 작은 범위의 반복문만 종료되는 등 예상치 못한 실수를 할 수도 있다.
+- 그럴 때 반복문 앞에 이름과 함께 콜론을 붙여 구문의 이름을 지정해주는 **구문 이름표**를 사용하면 좋다!
+- 이름이 지정된 구문을 제어하고자 할 때는 제어 키워드와 구문 이름을 함께 써주면 된다.
+
+```swift
+var numbers: [Int] = [3, 2342, 6, 3252]
+
+numbersLoop: for num in numbers {
+        if num > 5 || num < 1 {
+                continue numbersLoop
+        }
+        
+        var count: Int = 0
+
+        printLoop: while true {
+    
+                print(num)
+                count += 1
+
+                if count == num {
+                        break printLoop
+                }
+        }
+
+        removeLoop: while true {
+                if numbers.first != num {
+                        break numbersLoop
+                }
+                numbers.removeFirst()
+        }
+}
+
+// 3
+// 3
+// 3
+// numbers에는 [2342, 6, 3252]가 남는다.
+```
