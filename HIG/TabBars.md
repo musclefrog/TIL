@@ -4,7 +4,7 @@
 
 Tab bar는 bar item을 사용하여 동일한 view에서 서로 배타적인 내용의 창을 탐색한다.
 
-![components-tab-bar-intro@2x.png](Tab%20bars%20be4fbf6c2feb49bdba6157365fcd2610/components-tab-bar-intro2x.png)
+![https://docs-assets.developer.apple.com/published/a6228884047d7fafe87b59f2c54090aa/components-tab-bar-intro@2x.png](https://docs-assets.developer.apple.com/published/a6228884047d7fafe87b59f2c54090aa/components-tab-bar-intro@2x.png)
 
 Tab bars help people understand the different types of information or functionality that a view provides. They also let people quickly switch between sections of the view while preserving the current navigation state within each section.
 
@@ -61,7 +61,7 @@ By default, a tab bar is translucent: It uses a background material only when co
     
     참고) Sidebar
     
-    ![components-sidebar-intro@2x.png](Tab%20bars%20be4fbf6c2feb49bdba6157365fcd2610/components-sidebar-intro2x.png)
+    ![https://docs-assets.developer.apple.com/published/fbab4d7b7ae7b8a2790523101585497d/components-sidebar-intro@2x.png](https://docs-assets.developer.apple.com/published/fbab4d7b7ae7b8a2790523101585497d/components-sidebar-intro@2x.png)
     
 - **Ensure that tabs affect the view that’s attached to the tab bar, not views elsewhere onscreen.** For example, make sure selecting a tab on the left side of a split view doesn’t cause the right side of the split view to change.
     
@@ -76,7 +76,7 @@ By default, a tab bar is translucent: It uses a background material only when co
     
     **SF Symbols를 사용하여 확장 가능(scalable)하고 시각적으로 일관(consistent)된 tab bar 아이템을 제공하라.** [SF Symbols](https://developer.apple.com/design/human-interface-guidelines/sf-symbols)를 사용할 때 tab bar 아이템은 다른 컨텍스트에 자동으로 적용된다. 예를 들어 tab bar는 현재 디바이스 및 방향에 따라 일반(regular) 또는 소형(compact)일 수 있다. 또한 tab bar 아이콘은 portrait(세로) 방향일 경우 탭 제목 위에 나타날 수 있지만 landscape(가로) 방향일 경우 아이콘과 제목이 나란히 나타날 수 있다. 플랫폼과의 일관성을 위해 filled symbol 또는 icon을 선호한다. 앱이 iPad에서 실행될 때 tab bar 대신 sidebar를 사용하는 경우, filled symbol 또는 icon을 outlined variant로 전환한다.
     
-    ![tab-bar-landscape@2x.png](Tab%20bars%20be4fbf6c2feb49bdba6157365fcd2610/tab-bar-landscape2x.png)
+    ![https://docs-assets.developer.apple.com/published/073de700f9e4471c237135b4e5d2e2a4/tab-bar-landscape@2x.png](https://docs-assets.developer.apple.com/published/073de700f9e4471c237135b4e5d2e2a4/tab-bar-landscape@2x.png)
     
 
 If you need to create custom tab bar icons using bitmaps, create each icon in two sizes so that the tab bar looks good in both regular and compact environments. Use the following metrics when creating tab bar icons in different shapes. For guidance, see [Icons](https://developer.apple.com/design/human-interface-guidelines/icons).
@@ -87,7 +87,7 @@ If you need to create custom tab bar icons using bitmaps, create each icon in tw
 
 - Circle
 
-![tab-bars-max-width-height@2x.png](Tab%20bars%20be4fbf6c2feb49bdba6157365fcd2610/tab-bars-max-width-height2x.png)
+![https://docs-assets.developer.apple.com/published/26b47205d9825c5404ea773ed6729b94/tab-bars-max-width-height@2x.png](https://docs-assets.developer.apple.com/published/26b47205d9825c5404ea773ed6729b94/tab-bars-max-width-height@2x.png)
 
 | Regular tab bars | Compact tab bars |
 | --- | --- |
@@ -97,7 +97,7 @@ If you need to create custom tab bar icons using bitmaps, create each icon in tw
 
 - Square
 
-![tab-bars-target-width@2x.png](Tab%20bars%20be4fbf6c2feb49bdba6157365fcd2610/tab-bars-target-width2x.png)
+![https://docs-assets.developer.apple.com/published/dcc8daa9fb52d000d4310f6608a421c4/tab-bars-target-width@2x.png](https://docs-assets.developer.apple.com/published/dcc8daa9fb52d000d4310f6608a421c4/tab-bars-target-width@2x.png)
 
 | Regular tab bars | Compact tab bars |
 | --- | --- |
@@ -107,7 +107,7 @@ If you need to create custom tab bar icons using bitmaps, create each icon in tw
 
 - Wide
 
-![tab-bars-target-width-height@2x.png](Tab%20bars%20be4fbf6c2feb49bdba6157365fcd2610/tab-bars-target-width-height2x.png)
+![https://docs-assets.developer.apple.com/published/c6f2110e4f7da04a8edb66fd2c5f2871/tab-bars-target-width-height@2x.png](https://docs-assets.developer.apple.com/published/c6f2110e4f7da04a8edb66fd2c5f2871/tab-bars-target-width-height@2x.png)
 
 | Regular tab bars | Compact tab bars |
 | --- | --- |
@@ -117,7 +117,7 @@ If you need to create custom tab bar icons using bitmaps, create each icon in tw
 
 - Tail
 
-![tab-bars-target-height@2x.png](Tab%20bars%20be4fbf6c2feb49bdba6157365fcd2610/tab-bars-target-height2x.png)
+![https://docs-assets.developer.apple.com/published/c3f7f2f71d93e46207f7cba13747b529/tab-bars-target-height@2x.png](https://docs-assets.developer.apple.com/published/c3f7f2f71d93e46207f7cba13747b529/tab-bars-target-height@2x.png)
 
 | Regular tab bars | Compact tab bars |
 | --- | --- |
