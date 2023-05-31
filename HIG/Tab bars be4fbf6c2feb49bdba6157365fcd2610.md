@@ -4,7 +4,7 @@
 
 Tab bar는 bar item을 사용하여 동일한 view에서 서로 배타적인 내용의 창을 탐색한다.
 
-![https://docs-assets.developer.apple.com/published/a6228884047d7fafe87b59f2c54090aa/components-tab-bar-intro@2x.png](https://docs-assets.developer.apple.com/published/a6228884047d7fafe87b59f2c54090aa/components-tab-bar-intro@2x.png)
+![https://docs-assets.developer.apple.com/published/a6228884047d7fafe87b59f2c54090aa/components-tab-bar-intro@1x.png](https://docs-assets.developer.apple.com/published/a6228884047d7fafe87b59f2c54090aa/components-tab-bar-intro@1x.png)
 
 Tab bars help people understand the different types of information or functionality that a view provides. They also let people quickly switch between sections of the view while preserving the current navigation state within each section.
 
