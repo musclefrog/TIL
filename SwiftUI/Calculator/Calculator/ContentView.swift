@@ -8,41 +8,224 @@
 import SwiftUI
 
 struct ContentView: View {
+    
+    @State private var calculateNumber: String = "0"
+    
+    private let numberButton: [[String]] = [
+        ["7", "8", "9"],
+        ["4", "5", "6"],
+        ["1", "2", "3"]]
+    
     var body: some View {
         ZStack {
             // 배경설정
             Color.black.ignoresSafeArea()
-            
             VStack {
-                calculateArea()
+                Spacer()
                 HStack {
-                    ACButton()
-                    plusMinusButton()
-                    percentButton()
-                    divideButton()
+                    Spacer()
+                    Text(calculateNumber)
+                        .font(.system(size: 60))
+                        .foregroundColor(.white)
+                        .padding(.trailing)
                 }
                 HStack {
-                    sevenButton()
-                    eightButton()
-                    nineButton()
-                    multiplyButton()
+                    Button {
+                        calculateNumber = "0"
+                    } label: {
+                        Text("AC")
+                            .frame(width: 80, height: 80)
+                            .foregroundColor(.black)
+                            .background(.gray)
+                            .cornerRadius(40)
+                            .font(.system(size: 33))
+                    }
+                    
+                    Button {
+                        if (calculateNumber.contains("-")) {
+                            
+                        }
+                        else {
+                            calculateNumber = "-" + calculateNumber
+                        }
+                        
+                    } label: {
+                        Image(systemName: "plus.forwardslash.minus")
+                            .frame(width: 80, height: 80)
+                            .foregroundColor(.black)
+                            .background(.gray)
+                            .cornerRadius(40)
+                            .font(.system(size: 33))
+                    }
+                    
+                    Button {
+                        
+                    } label: {
+                        Text("%")
+                            .frame(width: 80, height: 80)
+                            .foregroundColor(.black)
+                            .background(.gray)
+                            .cornerRadius(40)
+                            .font(.system(size: 33))
+                    }
+                    
+                    Button {
+                        
+                    } label: {
+                        Image(systemName: "divide")
+                            .frame(width: 80, height: 80)
+                            .foregroundColor(.white)
+                            .background(.orange)
+                            .cornerRadius(40)
+                            .font(.system(size: 33))
+                    }
+                    
                 }
                 HStack {
-                    fourButton()
-                    fiveButton()
-                    sixButton()
-                    minusButton()
+                    ForEach(numberButton[0], id: \.self) { row in
+                        Button {
+                            if (calculateNumber == "0") {
+                                calculateNumber = row
+                            }
+                            else if (calculateNumber == "-0") {
+                                calculateNumber = "-" + row
+                            }
+                            else {
+                                calculateNumber += row
+                            }
+
+                        } label: {
+                            Text(row)
+                                .frame(width: 80, height: 80)
+                                .foregroundColor(.white)
+                                .background(Color("NumberColor"))
+                                .cornerRadius(40)
+                                .font(.system(size: 33))
+                        }
+                    }
+                    Button {
+
+                    } label: {
+                        Image(systemName: "multiply")
+                            .frame(width: 80, height: 80)
+                            .foregroundColor(.white)
+                            .background(.orange)
+                            .cornerRadius(40)
+                            .font(.system(size: 33))
+                    }
                 }
+                
                 HStack {
-                    oneButton()
-                    twoButton()
-                    threeButton()
-                    plusButton()
+                    ForEach(numberButton[1], id: \.self) { row in
+                        Button {
+                            if (calculateNumber == "0") {
+                                calculateNumber = row
+                            }
+                            else if (calculateNumber == "-0") {
+                                calculateNumber = "-" + row
+                            }
+                            else {
+                                calculateNumber += row
+                            }
+
+                        } label: {
+                            Text(row)
+                                .frame(width: 80, height: 80)
+                                .foregroundColor(.white)
+                                .background(Color("NumberColor"))
+                                .cornerRadius(40)
+                                .font(.system(size: 33))
+                        }
+                    }
+                    Button {
+
+                    } label: {
+                        Image(systemName: "minus")
+                            .frame(width: 80, height: 80)
+                            .foregroundColor(.white)
+                            .background(.orange)
+                            .cornerRadius(40)
+                            .font(.system(size: 33))
+                    }
                 }
+                
                 HStack {
-                    zeroButton()
-                    periodButton()
-                    equalButton()
+                    ForEach(numberButton[2], id: \.self) { row in
+                        Button {
+                            if (calculateNumber == "0") {
+                                calculateNumber = row
+                            }
+                            else if (calculateNumber == "-0") {
+                                calculateNumber = "-" + row
+                            }
+                            else {
+                                calculateNumber += row
+                            }
+
+                        } label: {
+                            Text(row)
+                                .frame(width: 80, height: 80)
+                                .foregroundColor(.white)
+                                .background(Color("NumberColor"))
+                                .cornerRadius(40)
+                                .font(.system(size: 33))
+                        }
+                    }
+                    Button {
+
+                    } label: {
+                        Image(systemName: "plus")
+                            .frame(width: 80, height: 80)
+                            .foregroundColor(.white)
+                            .background(.orange)
+                            .cornerRadius(40)
+                            .font(.system(size: 33))
+                    }
+                }
+                
+                HStack {
+                    Button {
+                        if (calculateNumber == "0") {
+                            calculateNumber = "0"
+                        }
+                        else {
+                            calculateNumber += "0"
+                        }
+                    } label: {
+                        Text("0")
+                            .frame(width: 168, height: 80)
+                            .foregroundColor(.white)
+                            .background(Color("NumberColor"))
+                            .cornerRadius(40)
+                            .font(.system(size: 33))
+                    }
+                    
+                    Button {
+                        if (calculateNumber.contains(".")) {
+                            
+                        }
+                        else {
+                            calculateNumber += "."
+                        }
+                    } label: {
+                        Text(".")
+                            .frame(width: 80, height: 80)
+                            .foregroundColor(.white)
+                            .background(Color("NumberColor"))
+                            .cornerRadius(40)
+                            .font(.system(size: 33))
+                    }
+                    
+                    Button {
+                        
+                    } label: {
+                        Image(systemName: "equal")
+                            .frame(width: 80, height: 80)
+                            .foregroundColor(.white)
+                            .background(.orange)
+                            .cornerRadius(40)
+                            .font(.system(size: 33))
+                    }
                 }
             }
         }
