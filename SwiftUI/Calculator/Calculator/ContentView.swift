@@ -72,6 +72,24 @@ enum ButtonType: String {
             return Color.black
         }
     }
+    var imageName: String {
+        switch self {
+        case .opposite:
+            return "plus.forwardslash.minus"
+        case .divide:
+            return "divide"
+        case .multiply:
+            return "multiply"
+        case .minus:
+            return "minus"
+        case .plus:
+            return "plus"
+        case .equal:
+            return "equal"
+        default:
+            return "?"
+        }
+    }
 }
 
 
@@ -84,7 +102,7 @@ struct ContentView: View {
         [.seven, .eight, .nine, .multiply],
         [.four, .five, .six, .minus],
         [.one, .two, .three, .plus],
-        [.zero, .zero, .point, .equal]]
+        [.zero, .point, .equal]]
     
     var body: some View {
         ZStack {
@@ -99,229 +117,65 @@ struct ContentView: View {
                         .foregroundColor(.white)
                         .padding(.trailing)
                 }
-                
+
                 ForEach(buttonName, id: \.self) { i in
                     HStack {
-                        ForEach(i, id: \.self) { row in
+                        ForEach(i, id: \.self) { item in
                             Button {
-                                if calculateNumber == "0" {
-                                    calculateNumber = "7"
-                            }
-                                else {
-                                    calculateNumber += "7"
+                                if item == .clear {
+                                    calculateNumber = "0"
+                                }
+                                else if item == .opposite {
+                                    if calculateNumber.contains("-") {
+                                        calculateNumber = calculateNumber.replacingOccurrences(of: "-", with: "")
+                                    }
+                                    else {
+                                        calculateNumber = "-" + calculateNumber
+                                    }
+                                }
+                                else if item == .point {
+                                    if calculateNumber.contains(".") {
+
+                                    }
+                                    else {
+                                        calculateNumber = calculateNumber + "."
+                                    }
+                                }
+
+                                else if item == .one || item == .two || item == .three || item == .four || item == .five || item == .six || item == .seven || item == .eight || item == .nine || item == .zero {
+                                    if calculateNumber == "0" {
+                                        calculateNumber = item.buttonName
+                                    }
+                                    else if calculateNumber == "-0" {
+                                        calculateNumber = "-" + item.buttonName
+                                    }
+                                    else {
+                                        calculateNumber += item.buttonName
+                                    }
                                 }
 
                             } label: {
-                                Text(row.buttonName)
-                                    .frame(width: 80, height: 80)
-                                    .foregroundColor(row.foregroundColor)
-                                    .background(row.backgroundColor)
-                                    .cornerRadius(40)
-                                    .font(.system(size: 33))
+//                                if item == .opposite || item == .divide || item == .multiply || item == .minus || item == .plus || item == .equal {
+                                Image(systemName: item.imageName)
+                                        .frame(width: 80, height: 80)
+                                        .foregroundColor(item.foregroundColor)
+                                        .background(item.backgroundColor)
+                                        .cornerRadius(40)
+                                        .font(.system(size: 33))
+//                                }
+//                                else {
+                                    Text(item.buttonName)
+                                        .frame(width: item == .some(.zero) ? 160 : 80, height: 80)
+                                        .foregroundColor(item.foregroundColor)
+                                        .background(item.backgroundColor)
+                                        .cornerRadius(40)
+                                        .font(.system(size: 33))
+//                                }
                             }
                         }
                     }
                 }
                 
-//                HStack {
-//                    Button {
-//                        calculateNumber = "0"
-//                    } label: {
-//                        Text("AC")
-//                            .frame(width: 80, height: 80)
-//                            .foregroundColor(.black)
-//                            .background(.gray)
-//                            .cornerRadius(40)
-//                            .font(.system(size: 33))
-//                    }
-//
-//                    Button {
-//                        if (calculateNumber.contains("-")) {
-//
-//                        }
-//                        else {
-//                            calculateNumber = "-" + calculateNumber
-//                        }
-//
-//                    } label: {
-//                        Image(systemName: "plus.forwardslash.minus")
-//                            .frame(width: 80, height: 80)
-//                            .foregroundColor(.black)
-//                            .background(.gray)
-//                            .cornerRadius(40)
-//                            .font(.system(size: 33))
-//                    }
-//
-//                    Button {
-//
-//                    } label: {
-//                        Text("%")
-//                            .frame(width: 80, height: 80)
-//                            .foregroundColor(.black)
-//                            .background(.gray)
-//                            .cornerRadius(40)
-//                            .font(.system(size: 33))
-//                    }
-//
-//                    Button {
-//
-//                    } label: {
-//                        Image(systemName: "divide")
-//                            .frame(width: 80, height: 80)
-//                            .foregroundColor(.white)
-//                            .background(.orange)
-//                            .cornerRadius(40)
-//                            .font(.system(size: 33))
-//                    }
-//
-//                }
-//
-//                HStack {
-//                    ForEach(numberButton[0], id: \.self) { row in
-//                        Button {
-//                            if (calculateNumber == "0") {
-//                                calculateNumber = row
-//                            }
-//                            else if (calculateNumber == "-0") {
-//                                calculateNumber = "-" + row
-//                            }
-//                            else {
-//                                calculateNumber += row
-//                            }
-//
-//                        } label: {
-//                            Text(row)
-//                                .frame(width: 80, height: 80)
-//                                .foregroundColor(.white)
-//                                .background(Color("NumberColor"))
-//                                .cornerRadius(40)
-//                                .font(.system(size: 33))
-//                        }
-//                    }
-//                    Button {
-//
-//                    } label: {
-//                        Image(systemName: "multiply")
-//                            .frame(width: 80, height: 80)
-//                            .foregroundColor(.white)
-//                            .background(.orange)
-//                            .cornerRadius(40)
-//                            .font(.system(size: 33))
-//                    }
-//                }
-//
-//                HStack {
-//                    ForEach(numberButton[1], id: \.self) { row in
-//                        Button {
-//                            if (calculateNumber == "0") {
-//                                calculateNumber = row
-//                            }
-//                            else if (calculateNumber == "-0") {
-//                                calculateNumber = "-" + row
-//                            }
-//                            else {
-//                                calculateNumber += row
-//                            }
-//
-//                        } label: {
-//                            Text(row)
-//                                .frame(width: 80, height: 80)
-//                                .foregroundColor(.white)
-//                                .background(Color("NumberColor"))
-//                                .cornerRadius(40)
-//                                .font(.system(size: 33))
-//                        }
-//                    }
-//                    Button {
-//
-//                    } label: {
-//                        Image(systemName: "minus")
-//                            .frame(width: 80, height: 80)
-//                            .foregroundColor(.white)
-//                            .background(.orange)
-//                            .cornerRadius(40)
-//                            .font(.system(size: 33))
-//                    }
-//                }
-//
-//                HStack {
-//                    ForEach(numberButton[2], id: \.self) { row in
-//                        Button {
-//                            if (calculateNumber == "0") {
-//                                calculateNumber = row
-//                            }
-//                            else if (calculateNumber == "-0") {
-//                                calculateNumber = "-" + row
-//                            }
-//                            else {
-//                                calculateNumber += row
-//                            }
-//
-//                        } label: {
-//                            Text(row)
-//                                .frame(width: 80, height: 80)
-//                                .foregroundColor(.white)
-//                                .background(Color("NumberColor"))
-//                                .cornerRadius(40)
-//                                .font(.system(size: 33))
-//                        }
-//                    }
-//                    Button {
-//
-//                    } label: {
-//                        Image(systemName: "plus")
-//                            .frame(width: 80, height: 80)
-//                            .foregroundColor(.white)
-//                            .background(.orange)
-//                            .cornerRadius(40)
-//                            .font(.system(size: 33))
-//                    }
-//                }
-//
-//                HStack {
-//                    Button {
-//                        if (calculateNumber == "0") {
-//                            calculateNumber = "0"
-//                        }
-//                        else {
-//                            calculateNumber += "0"
-//                        }
-//                    } label: {
-//                        Text("0")
-//                            .frame(width: 168, height: 80)
-//                            .foregroundColor(.white)
-//                            .background(Color("NumberColor"))
-//                            .cornerRadius(40)
-//                            .font(.system(size: 33))
-//                    }
-//
-//                    Button {
-//                        if (calculateNumber.contains(".")) {
-//
-//                        }
-//                        else {
-//                            calculateNumber += "."
-//                        }
-//                    } label: {
-//                        Text(".")
-//                            .frame(width: 80, height: 80)
-//                            .foregroundColor(.white)
-//                            .background(Color("NumberColor"))
-//                            .cornerRadius(40)
-//                            .font(.system(size: 33))
-//                    }
-//
-//                    Button {
-//
-//                    } label: {
-//                        Image(systemName: "equal")
-//                            .frame(width: 80, height: 80)
-//                            .foregroundColor(.white)
-//                            .background(.orange)
-//                            .cornerRadius(40)
-//                            .font(.system(size: 33))
-//                    }
-//                }
             }
         }
         .padding()
