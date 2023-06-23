@@ -92,7 +92,6 @@ enum ButtonType: String {
     }
 }
 
-
 struct ContentView: View {
     
     @State private var calculateNumber: String = "0"
@@ -104,10 +103,10 @@ struct ContentView: View {
         [.one, .two, .three, .plus],
         [.zero, .point, .equal]]
     
+    private let SFSymbolName: [ButtonType] = [.opposite, .divide, .multiply, .minus, .plus, .equal]
+    
     var body: some View {
         ZStack {
-            // 배경설정
-            Color.black.ignoresSafeArea()
             VStack {
                 Spacer()
                 HStack {
@@ -117,65 +116,63 @@ struct ContentView: View {
                         .foregroundColor(.white)
                         .padding(.trailing)
                 }
-
+                
                 ForEach(buttonName, id: \.self) { i in
                     HStack {
-                        ForEach(i, id: \.self) { item in
-//                            Button {
-//                                if item == .clear {
-//                                    calculateNumber = "0"
-//                                }
-//                                else if item == .opposite {
-//                                    if calculateNumber.contains("-") {
-//                                        calculateNumber = calculateNumber.replacingOccurrences(of: "-", with: "")
-//                                    }
-//                                    else {
-//                                        calculateNumber = "-" + calculateNumber
-//                                    }
-//                                }
-//                                else if item == .point {
-//                                    if calculateNumber.contains(".") {
-//
-//                                    }
-//                                    else {
-//                                        calculateNumber = calculateNumber + "."
-//                                    }
-//                                }
-//
-//                                else if item == .one || item == .two || item == .three || item == .four || item == .five || item == .six || item == .seven || item == .eight || item == .nine || item == .zero {
-//                                    if calculateNumber == "0" {
-//                                        calculateNumber = item.buttonName
-//                                    }
-//                                    else if calculateNumber == "-0" {
-//                                        calculateNumber = "-" + item.buttonName
-//                                    }
-//                                    else {
-//                                        calculateNumber += item.buttonName
-//                                    }
-//                                }
+                        ForEach(i, id: \.self) { (item: ButtonType) in
+                            Button {
+                                if item == .clear {
+                                    calculateNumber = "0"
+                                }
+                                else if item == .opposite {
+                                    if calculateNumber.contains("-") {
+                                        calculateNumber = calculateNumber.replacingOccurrences(of: "-", with: "")
+                                    }
+                                    else {
+                                        calculateNumber = "-" + calculateNumber
+                                    }
+                                }
+                                else if item == .point {
+                                    if calculateNumber.contains(".") {
 
-//                            } label: {
-//                                if item == .opposite || item == .divide || item == .multiply || item == .minus || item == .plus || item == .equal {
-//                                Image(systemName: item.imageName)
-//                                        .frame(width: 80, height: 80)
-//                                        .foregroundColor(item.foregroundColor)
-//                                        .background(item.backgroundColor)
-//                                        .cornerRadius(40)
-//                                        .font(.system(size: 33))
-//                                }
-//                                else {
-//                                    Text(item.buttonName)
-//                                        .frame(width: item == .some(.zero) ? 160 : 80, height: 80)
-//                                        .foregroundColor(item.foregroundColor)
-//                                        .background(item.backgroundColor)
-//                                        .cornerRadius(40)
-//                                        .font(.system(size: 33))
-//                                }
-//                            }
+                                    }
+                                    else {
+                                        calculateNumber = calculateNumber + "."
+                                    }
+                                }
+
+                                else if item == .one || item == .two || item == .three || item == .four || item == .five || item == .six || item == .seven || item == .eight || item == .nine || item == .zero {
+                                    if calculateNumber == "0" {
+                                        calculateNumber = item.buttonName
+                                    }
+                                    else if calculateNumber == "-0" {
+                                        calculateNumber = "-" + item.buttonName
+                                    }
+                                    else {
+                                        calculateNumber += item.buttonName
+                                    }
+                                }
+                            } label: {
+                                if SFSymbolName.contains(item) {
+                                    Image(systemName: item.imageName)
+                                        .frame(width: 80, height: 80)
+                                        .foregroundColor(item.foregroundColor)
+                                        .background(item.backgroundColor)
+                                        .cornerRadius(40)
+                                        .font(.system(size: 33))
+                                }
+                                else {
+                                    Text(item.buttonName)
+                                        .frame(width: item == .some(.zero) ? 160 : 80, height: 80)
+                                        .foregroundColor(item.foregroundColor)
+                                        .background(item.backgroundColor)
+                                        .cornerRadius(40)
+                                        .font(.system(size: 33))
+                                }
+                            }
                         }
                     }
                 }
-                
             }
         }
         .padding()
@@ -187,3 +184,4 @@ struct ContentView_Previews: PreviewProvider {
         ContentView()
     }
 }
+
