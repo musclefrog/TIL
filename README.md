@@ -29,3 +29,7 @@ Today I Learned
 [CodeUp Python 기초 100제](https://codeup.kr/problemsetsol.php?psid=33)
 
 [→ 풀이](https://github.com/musclefrog/TIL/tree/main/Algorithm/CodeUp_기초100제)
+
+## WWDC
+
+[2022 WeatherKit](https://github.com/musclefrog/TIL/blob/main/WWDC/2022%20WeatherKit.md)
