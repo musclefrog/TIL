@@ -141,6 +141,10 @@ struct ContentView: View {
                                     }
                                 }
 
+                                else if item == .percent {
+                                    
+                                }
+                                
                                 else if item == .one || item == .two || item == .three || item == .four || item == .five || item == .six || item == .seven || item == .eight || item == .nine || item == .zero {
                                     if calculateNumber == "0" {
                                         calculateNumber = item.buttonName
