@@ -117,7 +117,7 @@ struct TenDayForecastView: View {
     }
 }
 
-// Hourly forecast chart
+// Hourly forecast chart.
 struct HourlyForecastChartView: View {
     
     let hourlyWeatherData: [HourWeather]
