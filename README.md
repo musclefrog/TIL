@@ -30,7 +30,7 @@ Today I Learned
 
 [→ 풀이](https://github.com/musclefrog/TIL/tree/main/Algorithm/CodeUp_기초100제)
 
-## WWDC
+## Kits
 
 [2022 WeatherKit](https://github.com/musclefrog/TIL/blob/main/WWDC/2022%20WeatherKit.md)
 
