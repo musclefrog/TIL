@@ -24,11 +24,17 @@ Today I Learned
 
 [#NavigationBars](https://github.com/musclefrog/TIL/blob/main/HIG/NavigationBars.md)
 
-## Algorithm_Python
+## Algorithm
 
-[CodeUp Python 기초 100제](https://codeup.kr/problemsetsol.php?psid=33)
+### [CodeUp Python 기초 100제](https://codeup.kr/problemsetsol.php?psid=33)
 
 [→ 풀이](https://github.com/musclefrog/TIL/tree/main/Algorithm/CodeUp_기초100제)
+
+### 백준 입출력 문제
+
+[2557](https://www.acmicpc.net/problem/2557), [1000](https://www.acmicpc.net/problem/1000), [2558](https://www.acmicpc.net/problem/2558), [10950](https://www.acmicpc.net/problem/10950), [10951](https://www.acmicpc.net/problem/10951), [10952](https://www.acmicpc.net/problem/10952), [10953](https://www.acmicpc.net/problem/10953), [11021](https://www.acmicpc.net/problem/11021), [11022](https://www.acmicpc.net/problem/11022), [11718](https://www.acmicpc.net/problem/11718), [11719](https://www.acmicpc.net/problem/11719), [11720](https://www.acmicpc.net/problem/11720), [11721](https://www.acmicpc.net/problem/11721), [2741](https://www.acmicpc.net/problem/2741), [2742](https://www.acmicpc.net/problem/2742), [2739](https://www.acmicpc.net/problem/2739), [1924](https://www.acmicpc.net/problem/1924), [8393](https://www.acmicpc.net/problem/8393), [10818](https://www.acmicpc.net/problem/10818), [2438](https://www.acmicpc.net/problem/2438), [2439](https://www.acmicpc.net/problem/2439), [2440](https://www.acmicpc.net/problem/2440), [2441](https://www.acmicpc.net/problem/2441), [2442](https://solved.ac/search?query=2442), [2445](https://www.acmicpc.net/problem/2445), [2522](https://www.acmicpc.net/problem/2522), [2446](https://www.acmicpc.net/problem/2446), [10991](https://www.acmicpc.net/problem/10991), [10992](https://www.acmicpc.net/problem/10992)
+
+[→ 풀이](https://github.com/musclefrog/TIL/tree/main/Algorithm/Baekjoon_InputOutput)
 
 ## Kits
 
